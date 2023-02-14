@@ -7,5 +7,3 @@ h5py
 numpy
 Pillow
 tensorflow-cpu
-Werkzeug
-gunicorn
