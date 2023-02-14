@@ -1,4 +1,7 @@
 Flask
+torch
+ultralytics
+cv2
 gevent
 h5py
 numpy

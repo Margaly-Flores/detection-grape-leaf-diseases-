@@ -1,7 +1,7 @@
 import torch
 import numpy as np
 import cv2
-import time
+#import time
 from ultralytics import YOLO
 from PIL import Image, ImageDraw
 from numpy import asarray
