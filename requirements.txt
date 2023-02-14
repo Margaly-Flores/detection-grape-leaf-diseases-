@@ -1,7 +1,7 @@
 Flask
 torch
 ultralytics
-opencv-python
+opencv-python>=4.6
 gevent
 h5py
 numpy
