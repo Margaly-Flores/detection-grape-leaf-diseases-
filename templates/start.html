@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Grape Leaves AI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='main.css') }}">
+</head>
+<html>
+
+<body>
+  <center>
+    <br>
+    <h1>Estado de la hoja de uva AI</h1>
+    <br>
+    <form action="/prediction" id="file" method="POST" enctype="multipart/form-data">
+      <input type="file" accept="image/*" name="file" />
+      <br>
+      <input type="submit" value="Subir" />
+    </form>
+    <br>
+    <img src="static/info.png" alt="Info" width="915px" height="517px"/>  <!-- 320px--> 
+    <br>
+    <br>
+  </center>
+</body>
+
+</html>
