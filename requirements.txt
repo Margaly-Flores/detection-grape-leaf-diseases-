@@ -2,10 +2,6 @@ Flask
 torch
 ultralytics
 opencv-python>=4.6
-gevent
-h5py
 numpy
 Pillow
 tensorflow-cpu
-Werkzeug
-gunicorn
