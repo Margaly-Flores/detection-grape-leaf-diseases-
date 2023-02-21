@@ -6,3 +6,4 @@ numpy
 Pillow
 tensorflow-cpu
 gunicorn==20.0.4
+libgl1-mesa-glx
