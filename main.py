@@ -5,7 +5,7 @@ from inference import ObjectDetection
 import os
 import base64
 from io import BytesIO
-import cv2
+#import cv2
 from PIL import Image
             
 app = Flask(__name__)

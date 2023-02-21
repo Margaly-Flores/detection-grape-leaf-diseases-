@@ -5,4 +5,5 @@ opencv-python>=4.6
 numpy
 Pillow
 tensorflow-cpu
-gunicorn==20.0.4
+Werkzeug
+gunicorn
