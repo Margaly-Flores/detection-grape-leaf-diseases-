@@ -1,0 +1,5 @@
+build:
+  base: "python:3.9"
+  after:
+    - apt-get update
+    - apt-get install -y libgl1-mesa-glx
