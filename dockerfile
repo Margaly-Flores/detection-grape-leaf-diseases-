@@ -5,5 +5,7 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     opencv-contrib-python
 
+RUN find / -name "libGL.so.1" 2>/dev/null
+
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
