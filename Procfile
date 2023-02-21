@@ -1,1 +1,1 @@
-web: gunicorn wsgi:app
+web: sh railway.sh
