@@ -1,6 +1,4 @@
-FROM python:3.8-slim-buster
-
-WORKDIR /app
+FROM railwayapp/base:latest
 
 RUN apt-get update && apt-get install -y \
     libgl1-mesa-glx \
