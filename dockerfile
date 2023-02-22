@@ -8,12 +8,15 @@ RUN apt-get update && apt-get install -y \
     python-opencv \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install --fix-missing -y \
+    libglu1-mesa \
+    libxi6 \
+    libxrender1 \
     libsm6 \
     libxext6 \
     libxrender-dev \
     libglib2.0-0 \
-#    libgl1-mesa-glx \
+    libgl1-mesa-glx \
     libglib2.0-0
 
 COPY requirements.txt /app/
