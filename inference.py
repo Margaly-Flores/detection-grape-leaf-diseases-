@@ -6,6 +6,9 @@ from ultralytics import YOLO
 from PIL import Image, ImageDraw
 from numpy import asarray
 import numpy
+import matplotlib.pyplot as plt
+import matplotlib.patches as patches
+
 
 weight_dir = "./weights"
 torch.hub.set_dir(weight_dir)
@@ -71,6 +74,7 @@ class ObjectDetection:
         :param frame: Frame which has been scored.
         :return: Frame with bounding boxes and labels ploted on it.
         """
+        #frame = Image.fromarray(frame)
         labels, cord = results
         n = len(labels)
         #x_shape, y_shape = frame.shape[1], frame.shape[0]
@@ -90,7 +94,16 @@ class ObjectDetection:
                     int(row[3]),
                 )
                 bgr = (0, 255, 0)
-                cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
+                plt.imshow(frame)
+                fig, ax = plt.subplots()
+                ax.imshow(frame)
+                rect = patches.Rectangle((x2, y2), (x1-x2), (y1-y2), linewidth=3, edgecolor='r', facecolor='none')
+                ax.add_patch(rect)
+                frame = Image.fromarray(frame)
+                frame = frame.convert('RGB')
+                fig.savefig('frame.JPEG')
+                frame = Image.open('frame.JPEG')
+                #cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
                 # cv2.putText(
                 #     frame,
                 #     self.class_to_label(labels[i]),
@@ -112,8 +125,8 @@ class ObjectDetection:
         """
         #frame = cv2.imread("image/image_leafblight.JPG")
         frame = Image.open(image_file)                              ############
-        #frame = cv2.cvtColor(numpy.array(frame), cv2.COLOR_RGB2BGR) ############ 
-        frame = asarray(frame)
+        #frame = cv2.cvtColor(numpy.array(frame), cv2.COLOR_RGB2BGR) 
+        frame = asarray(frame)                                      
         results = self.score_frame(frame)
         frame,lab = self.plot_boxes(results, frame)
         # print(lab)

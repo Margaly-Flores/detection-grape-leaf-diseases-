@@ -34,8 +34,8 @@ def prediction():
     #image_result, quantity, quality = detect_and_classification(currentfile, threshold = .5)   
 
     buffered = BytesIO()
-    image_result = Image.fromarray(image_result)
-    image_result = image_result.resize((400, 400))
+    #image_result = Image.fromarray(image_result)
+    image_result = image_result.resize((500, 400))
     image_result.save(buffered, format="JPEG")
     image_memory = base64.b64encode(buffered.getvalue())
 
