@@ -1,10 +1,11 @@
 Flask
 torch
-ultralytics
 opencv-python>=4.6
 numpy
 matplotlib
 Pillow
 tensorflow-cpu
+ultralytics
+libgl1-mesa-glx
 Werkzeug
 gunicorn
