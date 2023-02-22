@@ -1,7 +1,7 @@
 Flask
 torch
 ultralytics
-opencv-python>=4.6
+opencv-python-headless==4.5.1.48
 numpy
 Pillow
 tensorflow-cpu
