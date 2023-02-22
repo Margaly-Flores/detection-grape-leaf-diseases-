@@ -1,12 +1,29 @@
-version: 1
-frontend:
-  builders:
-    # Construir la imagen de Docker
-    docker:
-      build: .
+# version: 1
+# frontend:
+#   builders:
+#     # Construir la imagen de Docker
+#     docker:
+#       build: .
+#       dockerfile: Dockerfile
+#   # Especificar los puertos en los que se ejecutará la aplicación
+#   ports:
+#     - 8080
+#   # Especificar el comando para iniciar la aplicación
+#   startCommand: python main.py
+
+services:
+  web:
+    build:
+      context: .
       dockerfile: Dockerfile
-  # Especificar los puertos en los que se ejecutará la aplicación
-  ports:
-    - 8080
-  # Especificar el comando para iniciar la aplicación
-  startCommand: python main.py
+      args:
+        - DEBIAN_FRONTEND=noninteractive
+    env:
+      PORT: 8000
+      startCommand: python main.py
+      # otras variables de entorno que necesite tu servicio
+    # agregamos libgl1-mesa-glx como una dependencia
+    run:
+      setup: |
+        apt-get update
+        apt-get install -y libgl1-mesa-glx
