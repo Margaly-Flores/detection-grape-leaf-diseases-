@@ -3,6 +3,7 @@ torch
 ultralytics
 opencv-python>=4.6
 numpy
+matplotlib
 Pillow
 tensorflow-cpu
 Werkzeug

@@ -1,6 +1,6 @@
 import torch
 import numpy as np
-import cv2
+#import cv2
 #import time
 from ultralytics import YOLO
 from PIL import Image, ImageDraw
