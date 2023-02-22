@@ -6,6 +6,5 @@ matplotlib
 Pillow
 tensorflow-cpu
 ultralytics
-libgl1-mesa-glx
 Werkzeug
 gunicorn
