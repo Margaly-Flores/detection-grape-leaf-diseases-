@@ -1,5 +1,6 @@
 # Use an official Python runtime as a parent image
-FROM python:3.9-slim-buster
+#FROM python:3.9-slim-buster
+FROM ubuntu:latest
 
 ENV PYTHONUNBUFFERED=1
 
@@ -20,9 +21,9 @@ COPY requirements.txt /app/
 RUN pip install -r /app/requirements.txt
 
 # Set the working directory to /app
-WORKDIR /app
+#WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+#COPY . /app
 # Run app.py when the container launches
 CMD ["python", "main.py"]
