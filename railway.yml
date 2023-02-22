@@ -1,6 +1,12 @@
-version: 1.0
-services:
-  web:
-    dockerfile: Dockerfile
-    env:
-      - PORT=8080
+version: 1
+frontend:
+  builders:
+    # Construir la imagen de Docker
+    docker:
+      build: .
+      dockerfile: Dockerfile
+  # Especificar los puertos en los que se ejecutará la aplicación
+  ports:
+    - 8080
+  # Especificar el comando para iniciar la aplicación
+  startCommand: python main.py
