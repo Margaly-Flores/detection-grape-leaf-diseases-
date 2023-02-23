@@ -35,11 +35,10 @@ def prediction():
 
     buffered = BytesIO()
     #image_result = Image.fromarray(image_result)
-    image_result = image_result.resize((500, 400))
+    image_result = image_result.resize((400, 400))
     image_result.save(buffered, format="JPEG")
     image_memory = base64.b64encode(buffered.getvalue())
 
-    #return render_template("result.html", quantity=quantity, quality=quality, img_data=image_memory.decode('utf-8'))
     return render_template("result.html", type=type, img_data=image_memory.decode('utf-8'))
 
 

@@ -6,6 +6,7 @@ from ultralytics import YOLO
 from PIL import Image, ImageDraw
 from numpy import asarray
 import numpy
+import io
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
@@ -93,16 +94,14 @@ class ObjectDetection:
                     int(row[2]),
                     int(row[3]),
                 )
-                bgr = (0, 255, 0)
-                plt.imshow(frame)
-                fig, ax = plt.subplots()
-                ax.imshow(frame)
-                rect = patches.Rectangle((x2, y2), (x1-x2), (y1-y2), linewidth=3, edgecolor='r', facecolor='none')
-                ax.add_patch(rect)
+                bgr = (0, 255, 0)            #----------------------------
                 frame = Image.fromarray(frame)
-                frame = frame.convert('RGB')
-                fig.savefig('frame.JPEG')
-                frame = Image.open('frame.JPEG')
+                draw = ImageDraw.Draw(frame)
+                draw.rectangle([(x1, y1), (x2, y2)], outline="red")
+                buffer = io.BytesIO()
+                frame.save(buffer, format='JPEG')
+                buffer.seek(0)
+                frame = Image.open(buffer)
                 #cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
                 # cv2.putText(
                 #     frame,
