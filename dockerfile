@@ -3,6 +3,12 @@ FROM python:3.9-slim-buster
 
 ENV PYTHONUNBUFFERED=1
 
+# Set the working directory to /app
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
 # Install any needed packages specified in requirements.txt
 RUN apt-get update && apt-get install -y \
     python-opencv \
@@ -19,13 +25,8 @@ RUN apt-get update && apt-get install --fix-missing -y \
     libgl1-mesa-glx \
     libglib2.0-0
 
-COPY requirements.txt /app/
 RUN pip install -r /app/requirements.txt
+EXPOSE 80 442 5000 8080
 
-# Set the working directory to /app
-#WORKDIR /app
-
-# Copy the current directory contents into the container at /app
-#COPY . /app
 # Run app.py when the container launches
 CMD ["python", "main.py"]

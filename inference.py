@@ -1,14 +1,9 @@
 import torch
-import numpy as np
-#import cv2
-#import time
 from ultralytics import YOLO
-from PIL import Image, ImageDraw
+from PIL import Image
 from numpy import asarray
-import numpy
-import io
-import matplotlib.pyplot as plt
-import matplotlib.patches as patches
+import numpy as np
+import cv2
 
 
 weight_dir = "./weights"
@@ -33,15 +28,10 @@ class ObjectDetection:
 
     def load_model(self):
         """
-        Loads Yolo5 model from pytorch hub.
+        Loads Yolov8 model from pytorch hub.
         :return: Trained Pytorch model.
         """
-        # model = torch.hub.load("ultralytics/yolov8", "yolov8s", pretrained=False)
-        # model.load_state_dict(torch.load("./weights/best.pt"))
-        # model.eval()
         model = YOLO("./weights/best.pt")
-        # -----------------------------------------------------------------------------
-
         return model
 
     def score_frame(self, frame):
@@ -57,7 +47,6 @@ class ObjectDetection:
             r[0:5] for r in results[0].boxes.boxes
         ]
 
-        # print("labels, cord", labels, cord)
         return labels, cord
 
     def class_to_label(self, x):
@@ -75,46 +64,34 @@ class ObjectDetection:
         :param frame: Frame which has been scored.
         :return: Frame with bounding boxes and labels ploted on it.
         """
-        #frame = Image.fromarray(frame)
-        labels, cord = results
-        n = len(labels)
-        #x_shape, y_shape = frame.shape[1], frame.shape[0]
+        labels_number, cord = results
+        labels_text = []
+        n = len(labels_number)
         for i in range(n):
             row = cord[i]
             if row[4] >= 0.2:
-                """x1, y1, x2, y2 = (
-                    int(row[0] * x_shape),
-                    int(row[1] * y_shape),
-                    int(row[2] * x_shape),
-                    int(row[3] * y_shape),
-                )"""
+                
                 x1, y1, x2, y2 = (
                     int(row[0]),
                     int(row[1]),
                     int(row[2]),
                     int(row[3]),
                 )
-                bgr = (0, 255, 0)            #----------------------------
-                frame = Image.fromarray(frame)
-                draw = ImageDraw.Draw(frame)
-                draw.rectangle([(x1, y1), (x2, y2)], outline="red")
-                buffer = io.BytesIO()
-                frame.save(buffer, format='JPEG')
-                buffer.seek(0)
-                frame = Image.open(buffer)
-                #cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
-                # cv2.putText(
-                #     frame,
-                #     self.class_to_label(labels[i]),
-                #     (x1, y1),
-                #     cv2.FONT_HERSHEY_SIMPLEX,
-                #     0.9,
-                #     bgr,
-                #     2,
-                # )
-                lab = self.class_to_label(labels[i])
+                bgr = (0, 255, 0)           
+                cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
+                label_text = self.class_to_label(labels_number[i])
+                cv2.putText(
+                    frame,
+                    label_text,
+                    (x1, y1),
+                    cv2.FONT_HERSHEY_SIMPLEX,
+                    0.9,
+                    bgr,
+                    2,
+                )
+                labels_text.append(label_text)
 
-        return frame,lab 
+        return frame,labels_text 
 
     def __call__(self,image_file): 
         """
@@ -122,18 +99,13 @@ class ObjectDetection:
         and write the output into a new file.
         :return: void
         """
-        #frame = cv2.imread("image/image_leafblight.JPG")
-        frame = Image.open(image_file)                              ############
-        #frame = cv2.cvtColor(numpy.array(frame), cv2.COLOR_RGB2BGR) 
+
+        frame = Image.open(image_file)                            
+        frame = cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR) 
         frame = asarray(frame)                                      
         results = self.score_frame(frame)
         frame,lab = self.plot_boxes(results, frame)
-        # print(lab)
-        #cv2.imshow("img", frame)  #comment
-        #cv2.waitKey(0)            #comment
 
-        # closing all open windows
-        #cv2.destroyAllWindows()   #comment
         return frame,lab 
     
 
