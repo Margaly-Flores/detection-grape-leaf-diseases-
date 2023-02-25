@@ -105,7 +105,6 @@ class ObjectDetection:
         frame = asarray(frame)                                      
         results = self.score_frame(frame)
         frame,lab = self.plot_boxes(results, frame)
-
         return frame,lab 
     
 

@@ -10,9 +10,9 @@ APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 @app.route('/')
 def home():
-   return render_template('start.html')
+   return render_template("start.html")
 
-@app.route('/prediction',methods=["GET","POST"])
+@app.route("/prediction",methods=["GET","POST"])
 def prediction():
     errors = []
     allowed_extensions = set(['png', 'jpg', 'jpeg', 'gif'])
@@ -20,7 +20,7 @@ def prediction():
     try:
         if request.method == 'POST':
             currentfile = request.files.get('file', '')
-
+            #prediction of model
         model = ObjectDetection()
         prediction, classes = model(currentfile)
 
@@ -29,8 +29,10 @@ def prediction():
         image_result = image_result.resize((400, 400))
         image_result.save(buffered, format="JPEG")
         image_memory = base64.b64encode(buffered.getvalue())
-
-        return render_template("result.html", clases=", ".join(classes), img_data=image_memory.decode('utf-8'))
+        print("classes", classes)
+        return render_template(
+            "result.html", classes=", ".join(classes), img_data=image_memory.decode('utf-8')
+        )
 
     except Exception as e:
         return {"response": f"Ocurrieron los siguientes errores: {e}"}
