@@ -2,7 +2,6 @@
 FROM python:3.9-slim-buster
 
 ENV PYTHONUNBUFFERED=1
-
 # Set the working directory to /app
 WORKDIR /app
 
