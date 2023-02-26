@@ -5,6 +5,8 @@ from numpy import asarray
 import numpy as np
 import cv2
 
+# import io
+
 
 weight_dir = "./weights"
 torch.hub.set_dir(weight_dir)
@@ -12,7 +14,7 @@ torch.hub.set_dir(weight_dir)
 
 class ObjectDetection:
     """
-    Class implements Yolo5 model to make inferences on a youtube video using OpenCV.
+    Class implements Yolo model to make inferences on a youtube video using OpenCV.
     """
 
     def __init__(self):
@@ -28,7 +30,7 @@ class ObjectDetection:
 
     def load_model(self):
         """
-        Loads Yolov8 model from pytorch hub.
+        Loads Yolo5 model from pytorch hub.
         :return: Trained Pytorch model.
         """
         model = YOLO("./weights/best.pt")
@@ -47,6 +49,7 @@ class ObjectDetection:
             r[0:5] for r in results[0].boxes.boxes
         ]
 
+        # print("labels, cord", labels, cord)
         return labels, cord
 
     def class_to_label(self, x):
@@ -70,14 +73,13 @@ class ObjectDetection:
         for i in range(n):
             row = cord[i]
             if row[4] >= 0.2:
-                
                 x1, y1, x2, y2 = (
                     int(row[0]),
                     int(row[1]),
                     int(row[2]),
                     int(row[3]),
                 )
-                bgr = (0, 255, 0)           
+                bgr = (0, 255, 0)
                 cv2.rectangle(frame, (x1, y1), (x2, y2), bgr, 2)
                 label_text = self.class_to_label(labels_number[i])
                 cv2.putText(
@@ -91,25 +93,25 @@ class ObjectDetection:
                 )
                 labels_text.append(label_text)
 
-        return frame,labels_text 
+        return frame, labels_text
 
-    def __call__(self,image_file): 
+    def __call__(self, image_file):
         """
         This function is called when class is executed, it runs the loop to read the video frame by frame,
         and write the output into a new file.
         :return: void
         """
-
-        frame = Image.open(image_file)                            
-        frame = cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR) 
-        frame = asarray(frame)                                      
+        frame = Image.open(image_file)
+        frame = cv2.cvtColor(np.array(frame), cv2.COLOR_RGB2BGR)
+        frame = asarray(frame)
         results = self.score_frame(frame)
-        frame,lab = self.plot_boxes(results, frame)
-        return frame,lab 
-    
+        frame, lab = self.plot_boxes(results, frame)
+        return frame, lab
 
-# Create a new object and execute. 
+
+# Create a new object and execute.
 # detection = ObjectDetection()
 # detection()
+
 
 
