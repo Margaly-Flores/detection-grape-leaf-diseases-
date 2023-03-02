@@ -11,3 +11,20 @@ frontend:
     - 8080
   # Especificar el comando para iniciar la aplicación
   startCommand: python main.py
+
+# services:
+#   web:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       args:
+#         - DEBIAN_FRONTEND=noninteractive
+#     env:
+#       PORT: 8000
+#       startCommand: python main.py
+#       # otras variables de entorno que necesite tu servicio
+#     # agregamos libgl1-mesa-glx como una dependencia
+#     run:
+#       setup: |
+#         apt-get update
+#         apt-get install -y libgl1-mesa-glx

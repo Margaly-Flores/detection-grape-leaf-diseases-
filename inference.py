@@ -112,6 +112,3 @@ class ObjectDetection:
 # Create a new object and execute.
 # detection = ObjectDetection()
 # detection()
-
-
-
