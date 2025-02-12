@@ -68,4 +68,4 @@ La interfaz permite:
 
 🐙 **GitHub:** @Margaly-Flores
 
-🔎*Este proyecto busca impulsar la innovación en la detección de enfermedades agrícolas a través del aprendizaje profundo.*🚜🌍
+🔎 *Este proyecto busca impulsar la innovación en la detección de enfermedades agrícolas a través del aprendizaje profundo.* 🚜🌍
