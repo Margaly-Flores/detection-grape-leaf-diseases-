@@ -49,10 +49,7 @@ La salud de un cultivo es fundamental para la producción de su producto. Este p
 ![](/images_read/efficientNet.jpg)
 
 ### 📌 Conclusión
-Tras evaluar múltiples arquitecturas de redes neuronales profundas, se identificó que ----- destacaron por su capacidad de clasificación precisa y su eficiencia computacional.
-
-----  demostró un excelente equilibrio entre precisión y consumo de recursos, siendo una opción ideal para entornos con limitaciones computacionales.
---- mostró una alta capacidad de generalización y robustez en la detección de enfermedades, especialmente en imágenes con variaciones de iluminación y ángulos.
+Tras evaluar múltiples arquitecturas de redes neuronales profundas, se identificó que Resnet50 y AlexNet destacaron por su capacidad de clasificación precisa y su eficiencia computacional.
 
 En futuras mejoras, se podría explorar el uso de técnicas de aumento de datos y optimización de hiperparámetros para mejorar aún más la precisión de los modelos sin comprometer la velocidad de inferencia.
 
