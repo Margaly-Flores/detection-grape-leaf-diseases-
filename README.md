@@ -55,7 +55,9 @@ En futuras mejoras, se podría explorar el uso de técnicas de aumento de datos 
 
 ### 🖥️ Interfaz de Usuario
 La interfaz permite:
+
 ✅ Subir una imagen de una hoja de uva.
+
 ✅ Obtener un diagnóstico basado en la predicción del modelo.
 
 ![](/images_read/02.jpg)
