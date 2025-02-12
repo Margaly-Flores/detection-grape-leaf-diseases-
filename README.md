@@ -11,7 +11,7 @@ La salud de un cultivo es fundamental para la producción de su producto. Este p
 
 ### 🛠️ Etiquetado de imágenes en Roboflow
 
-![](https://drive.google.com/file/d/1MYjhp4r7p46X8ehhBGkvLfijJyoZMkgC/view?usp=sharing.)
+![](/images_read/01.jpg)
 
 ### 🧠 Modelos Probados
                 
