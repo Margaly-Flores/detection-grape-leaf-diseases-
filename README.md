@@ -31,22 +31,22 @@ La salud de un cultivo es fundamental para la producción de su producto. Este p
 🧪 Resultados del entrenamiento de cada modelo:
 
 - **AlexNet** 📊
-![](https://drive.google.com/file/d/1hjVYkVGWxiMr8OboN_vY2noTzAqe9CVQ/view?usp=sharing)
+![](/images_read/alexnet.jpg)
 
 - **Inception V3** 📊
-![](https://drive.google.com/file/d/17WUIGURXLM2JXZZoE-WlcpWt50sBs730/view?usp=sharing)
+![](/images_read/inceptionV3.jpg)
 
 - **MobileNet:** 📊
-![](https://drive.google.com/file/d/1WnmFatHnK9lBSbF3Fqn3cnz-HEAsIX9F/view?usp=sharing)
+![](/images_read/mobileNet.jpg)
 
 - **ResNet 50** 📊
-![](https://drive.google.com/file/d/1_wiG15QWQcau8LsvmKXUN0wMzuIew8aH/view?usp=sharing)
+![](/images_read/resnet50.jpg)
 
 - **VGG16** 📊
-![](https://drive.google.com/file/d/1nn-2ZDRX974bDsm9-mVuy8pvJbZDssxe/view?usp=sharing)
+![](/images_read/vgg16.jpg)
 
 - **EfficientNet** 📊
-![](https://drive.google.com/file/d/1vzWZHbOBKLn2gV1Dm2Fubrw6wlyINJiq/view?usp=sharing)
+![](/images_read/efficientNet.jpg)
 
 ### 📌 Conclusión
 Tras evaluar múltiples arquitecturas de redes neuronales profundas, se identificó que ----- destacaron por su capacidad de clasificación precisa y su eficiencia computacional.
@@ -61,9 +61,9 @@ La interfaz permite:
 ✅ Subir una imagen de una hoja de uva.
 ✅ Obtener un diagnóstico basado en la predicción del modelo.
 
-![](https://drive.google.com/file/d/1q0X9QFb85CkzfSP9zTPRLBP2QMoMcPVY/view?usp=sharing)
+![](/images_read/02.jpg)
 
-![](https://drive.google.com/file/d/1HaMkI3FS4Mf30VdoXTLY87FNj6ZLMTJj/view?usp=sharing)
+![](/images_read/03.jpg)
 
 ##### 📩 Contacto
 
