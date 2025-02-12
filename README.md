@@ -65,6 +65,7 @@ La interfaz permite:
 ##### 📩 Contacto
 
 📧 **Email:** margaly.fn@gmail.com
+
 🐙 **GitHub:** @Margaly-Flores
 
 🔎 *Este proyecto busca impulsar la innovación en la detección de enfermedades agrícolas a través del aprendizaje profundo. *🚜🌍
