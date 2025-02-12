@@ -1,7 +1,7 @@
 🍇 Detección de Enfermedades en Hojas de Uva
 =============
 
-###🌱Introducción
+### 🌱Introducción
                 
 ----
 
@@ -9,11 +9,11 @@ La salud de un cultivo es fundamental para la producción de su producto. Este p
 
 
 
-###🛠️ Etiquetado de imágenes en Roboflow
+### 🛠️ Etiquetado de imágenes en Roboflow
 
 ![](https://drive.google.com/file/d/1MYjhp4r7p46X8ehhBGkvLfijJyoZMkgC/view?usp=sharing.)
 
-###🧠 Modelos Probados
+### 🧠 Modelos Probados
                 
 ----
 
@@ -26,7 +26,7 @@ La salud de un cultivo es fundamental para la producción de su producto. Este p
 - **VGG16:** Arquitectura probada para extracción de características.
 - **EfficientNet:** Modelo avanzado con una excelente relación entre precisión y eficiencia computacional.
 
-###📊 Resultados y Evaluación
+### 📊 Resultados y Evaluación
 
 🧪 Resultados del entrenamiento de cada modelo:
 
@@ -56,7 +56,7 @@ Tras evaluar múltiples arquitecturas de redes neuronales profundas, se identifi
 
 En futuras mejoras, se podría explorar el uso de técnicas de aumento de datos y optimización de hiperparámetros para mejorar aún más la precisión de los modelos sin comprometer la velocidad de inferencia.
 
-###🖥️ Interfaz de Usuario
+### 🖥️ Interfaz de Usuario
 La interfaz permite:
 ✅ Subir una imagen de una hoja de uva.
 ✅ Obtener un diagnóstico basado en la predicción del modelo.
@@ -65,7 +65,7 @@ La interfaz permite:
 
 ![](https://drive.google.com/file/d/1HaMkI3FS4Mf30VdoXTLY87FNj6ZLMTJj/view?usp=sharing)
 
-#####📩 Contacto
+##### 📩 Contacto
 
 📧 **Email:** margaly.fn@gmail.com
 🐙 **GitHub:** @Margaly-Flores
