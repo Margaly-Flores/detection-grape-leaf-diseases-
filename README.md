@@ -62,7 +62,7 @@ La interfaz permite:
 
 ![](/images_read/03.jpg)
 
-##### 📩 Contacto
+### 📩 Contacto
 
 📧 **Email:** margaly.fn@gmail.com
 
